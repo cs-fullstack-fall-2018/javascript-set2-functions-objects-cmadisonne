@@ -2,8 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="JS.js"></script>
     <title>Page 1 HTML</title>
+    <script>
+        function openWin() {
+            window.open(page2.html);
+        }
+    </script>
+    <script>
+        function openWin2() {
+            window.print(page2.html);
+        }
+    </script>
 </head>
+
 <body>
 <!--
     BOM Exercise:
@@ -13,6 +25,10 @@
     HINTS:
     - Consider 'button onclick'
 -->
+<form>
+    <input type="button" value="Open Window" onclick="openWin()"/> <!-- these are my buttons -->
+    <input type="button" value="Print Window" onclick="openWin2()">
+</form>
 
 </body>
 </html>
