@@ -5,13 +5,12 @@
     <script src="JS.js"></script>
     <title>Page 1 HTML</title>
     <script>
-        function openWin() {
-            window.open(page2.html);
+        function openWin() { // _self keeps it from opening a new tab/window
+            window.open("page2.html","_self"); // KEY: You were missing the quotes around the target page name
         }
-    </script>
-    <script>
+
         function openWin2() {
-            window.print(page2.html);
+            window.print(); // KEY: The print() method takes no parameters and just pulls up the print dialog for the current page
         }
     </script>
 </head>
@@ -27,7 +26,7 @@
 -->
 <form>
     <input type="button" value="Open Window" onclick="openWin()"/> <!-- these are my buttons -->
-    <input type="button" value="Print Window" onclick="openWin2()">
+    <input type="button" value="Print Window" onclick="openWin2()"/>
 </form>
 
 </body>

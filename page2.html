@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <script src="JS.js"></script>
     <title>Page 2 HTML</title>
-    <div id="Header"></div>
+    <!--<div id="Header"></div> KEY: Not here. Put in body. Only items in the 'body' tag will display in browser -->
 </head>
 <body>
 <!--
@@ -16,9 +16,33 @@
     - Display the width and height of your screen
     - Print the current URL using the 'window' object
 -->
-<form>
-    <input type="button" value="" onclick="getInfo()">
-</form>
+    <hr/> <!-- Horizontal line for the heck of it -->
+    <div id="Header"></div> <!-- Data will go <-- Here -->
+    <hr/> <!-- Horizontal line for the heck of it -->
+
+    <!-- KEY: Call your js function to write wt x ht to DOM -->
+    <script>getWtHt()</script>
+
+<!--<form>--> <!-- KEY: Doesn't need a 'form' element because we aren't submitting data via HTTP GET or POST method -->
+    <p>
+    <button onclick="(
+        function() {  <!-- KEY: Good old anonymous IIFE function works great here! -->
+        <!-- KEY: Build an HTML string of the info from the object literal you built in your js -->
+        var myDocInfo =
+            '<p>Page Title: '+printInfo.Title +'</p>' +
+            '<p>Page Address: '+printInfo.PageAddress +'</p>' +
+            '<p>Page Last Modified: '+printInfo.LastModified +'</p>';
+        // KEY: Now just get your DIV by id and change its HTML
+        // document.write(myDocInfo);
+        document.getElementById('Header').innerHTML = myDocInfo;
+    }()
+    )">Click Me for More Page Info!</button> <!-- KEY: Button had no text unless you add it -->
+    </p>
+    <p>
+        <!-- KEY: 2nd button just for grins. _self keeps it from opening a new window -->
+        <button onclick="window.open('page1.html','_self');">Go Back to Page 1. Pronto</button>
+    </p>
+<!--</form>-->
 
 
 </body>
