@@ -20,3 +20,7 @@ Write HTML pages and corresponding JavaScript to perform the following:
 
 See sample image to see expected output.
 
+/*
+	KEY: Hmm missing quite a bit here. See README 
+
+*/
